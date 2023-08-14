@@ -11,16 +11,17 @@ import experiencebg from "../src/assets/Experiencebg.jpeg"
 export default function Qualification() {
   const [isEducation, setIsEducation] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+  const [time, setTime] = useState(750)
 
   useEffect(() => {
     let timer = setTimeout(() => {
       setIsLoading(false);
-    }, 750);
+    }, time);
 
     return () => {
       clearTimeout(timer);
     };
-  });
+  },[isLoading]);
 
   return (
     (isLoading && <Loader />) || (
@@ -51,7 +52,9 @@ export default function Qualification() {
                   width: "100px",
                   textAlign: "center"
                 }}
-                onClick={() => setIsEducation(true)}
+                onClick={() => {setIsEducation(true) 
+                  setTime(250)
+                  setIsLoading(true)}}
               >
                 Education
               </h3>
@@ -66,7 +69,9 @@ export default function Qualification() {
                   width: "100px",
                   textAlign: "center"
                 }}
-                onClick={() => setIsEducation(false)}
+                onClick={() => {setIsEducation(false)
+                setTime(250)
+                setIsLoading(true)}}
               >
                 Experience
               </h3>
@@ -160,7 +165,7 @@ export default function Qualification() {
                 </>
               )) || (
                 <>
-                  <div className="edu1">
+                  <div className="edu2">
                     <div className="edu1In">
                       <div className="eduDiv">
                         <div className="eduIconContainer">

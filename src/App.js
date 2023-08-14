@@ -12,8 +12,8 @@ import Loader from "./Loader";
 
 export default function App() {
   // States
-  const [ishomeVisted, setIsHomeVisited] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  
   useEffect(() => {
     let timer = setTimeout(() => {
       setIsLoading(false);
@@ -44,7 +44,8 @@ export default function App() {
                 </Routes>
               </div>
             </>
-          ) : (
+          ) : 
+          (
             <Routes>
               <Route path="*" element={<Home />}></Route>
             </Routes>

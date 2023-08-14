@@ -6,6 +6,7 @@ import Programmer from "../src/assets/ProgrammerHomePage.png"
 import homeBg from "../src/assets/HomePageBG.jpeg"
 
 function Home() {
+  
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
